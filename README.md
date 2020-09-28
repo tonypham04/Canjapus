@@ -1,0 +1,2 @@
+# Canjapus
+Canjapus (Canada-Japan-United States) is a program written entirely in Lua which converts between Canadian, Japanese and United States currency. The program is written using a test-driven development approach. The unit test functions are provided from the [**LuaUnit**](https://github.com/bluebird75/luaunit) unit-testing framework by Philippe Fremy.
