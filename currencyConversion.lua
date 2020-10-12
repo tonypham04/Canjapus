@@ -1,7 +1,9 @@
 local currencyConversion = {}
 
--- Conversion Factors
-CANADIAN_DOLLAR_TO_JAPANESE_YEN_CONVERSION_FACTOR = 78.89
+-- Conversion Factors as of October 12, 2020
+CANADIAN_DOLLAR_TO_JAPANESE_YEN_CONVERSION_FACTOR = 80.32
+CANADIAN_DOLLAR_TO_US_DOLLAR = 0.76
+US_DOLLAR_TO_JAPANESE_YEN = 105.34
 
 function currencyConversion.convertAmount(amount, conversionFactor)
     -- Validate that the passed in amount is appropriate before attempting to convert

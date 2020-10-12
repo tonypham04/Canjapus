@@ -2,9 +2,9 @@ luaunit = require("luaunit")
 cc = require("currencyConversion")
 function testConvertCanadianDollarToJapaneseYen()
     -- Testing the base conversion factor
-    luaunit.assertEquals(cc.convertCanadianDollarToJapaneseYen(1), "78.89")
+    luaunit.assertEquals(cc.convertCanadianDollarToJapaneseYen(1), "80.32")
     -- Testing proper conversion to two decimal places
-    luaunit.assertEquals(cc.convertCanadianDollarToJapaneseYen(25.00), "1972.25")
+    luaunit.assertEquals(cc.convertCanadianDollarToJapaneseYen(25.00), "2008.00")
     -- Testing the case of zero
     luaunit.assertEquals(cc.convertCanadianDollarToJapaneseYen(0), "0.00")
     -- Testing the case of negative number
@@ -15,9 +15,9 @@ end
 
 function testConvertJapaneseYenToCanadianDollar()
     -- Testing the base conversion factor
-    luaunit.assertEquals(cc.convertJapaneseYenToCanadianDollar(78.89), "1.00")
+    luaunit.assertEquals(cc.convertJapaneseYenToCanadianDollar(80.32), "1.00")
     -- Testing proper conversion using a valid value
-    luaunit.assertEquals(cc.convertJapaneseYenToCanadianDollar(1971.46), "24.99")
+    luaunit.assertEquals(cc.convertJapaneseYenToCanadianDollar(2007.20), "24.99")
     -- Testing the case of zero
     luaunit.assertEquals(cc.convertJapaneseYenToCanadianDollar(0), "0.00")
     -- Testing the case of a negative nunmber
