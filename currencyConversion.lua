@@ -18,4 +18,8 @@ function currencyConversion.convertCanadianDollarToJapaneseYen(dollars)
     return currencyConversion.convertAmount(dollars, CANADIAN_DOLLAR_TO_JAPANESE_YEN_CONVERSION_FACTOR)
 end
 
+function currencyConversion.convertJapaneseYenToCanadianDollar(yen)
+    return currencyConversion.convertAmount(yen, 1/CANADIAN_DOLLAR_TO_JAPANESE_YEN_CONVERSION_FACTOR)
+end
+
 return currencyConversion
