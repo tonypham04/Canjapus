@@ -32,4 +32,8 @@ function currencyConversion.convertUSDollarToCanadianDollar(dollar)
     return currencyConversion.convertAmount(dollar, 1/CANADIAN_DOLLAR_TO_US_DOLLAR)
 end
 
+function currencyConversion.convertUSDollarToJapaneseYen(dollar)
+    return currencyConversion.convertAmount(dollar, US_DOLLAR_TO_JAPANESE_YEN)
+end
+
 return currencyConversion
