@@ -28,4 +28,8 @@ function currencyConversion.convertCanadianDollarToUSDollar(dollar)
     return currencyConversion.convertAmount(dollar, CANADIAN_DOLLAR_TO_US_DOLLAR)
 end
 
+function currencyConversion.convertUSDollarToCanadianDollar(dollar)
+    return currencyConversion.convertAmount(dollar, 1/CANADIAN_DOLLAR_TO_US_DOLLAR)
+end
+
 return currencyConversion
