@@ -16,12 +16,16 @@ function currencyConversion.convertAmount(amount, conversionFactor)
     return string.format("%.2f", amount * conversionFactor)
 end
 
-function currencyConversion.convertCanadianDollarToJapaneseYen(dollars)
-    return currencyConversion.convertAmount(dollars, CANADIAN_DOLLAR_TO_JAPANESE_YEN_CONVERSION_FACTOR)
+function currencyConversion.convertCanadianDollarToJapaneseYen(dollar)
+    return currencyConversion.convertAmount(dollar, CANADIAN_DOLLAR_TO_JAPANESE_YEN_CONVERSION_FACTOR)
 end
 
 function currencyConversion.convertJapaneseYenToCanadianDollar(yen)
     return currencyConversion.convertAmount(yen, 1/CANADIAN_DOLLAR_TO_JAPANESE_YEN_CONVERSION_FACTOR)
+end
+
+function currencyConversion.convertCanadianDollarToUSDollar(dollar)
+    return currencyConversion.convertAmount(dollar, CANADIAN_DOLLAR_TO_US_DOLLAR)
 end
 
 return currencyConversion
