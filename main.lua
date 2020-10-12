@@ -1,6 +1,8 @@
 local cc = require("currencyConversion")
+local graphics = require("design")
 
 local function displayMainMenu()
+    print(graphics.logo)
     print("Main Menu")
     print("a. Convert Canadian Dollar to Japanese Yen")
     print("b. Convert Japanese Yen to Canadian Dollar")
