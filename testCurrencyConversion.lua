@@ -51,4 +51,17 @@ function testConvertUSDollarToCanadianDollar()
     -- Testing the case of passing a non-number
     luaunit.assertErrorMsgContains("Error: Entry was not a valid dollar amount.", cc.convertUSDollarToCanadianDollar, "Visual Studio Code is an awesome text editor!")
 end
+
+function testConvertUSDollarToJapaneseYen()
+    -- Testing the base conversion factor
+    luaunit.assertEquals(cc.convertUSDollarToJapaneseYen(1.00), "105.34")
+    -- Testing proper conversion using a valid value
+    luaunit.assertEquals(cc.convertUSDollarToJapaneseYen(259.96), "27384.19")
+    -- Testing the case of zero
+    luaunit.assertEquals(cc.convertUSDollarToJapaneseYen(0), "0.00")
+    -- Testing the case of a negative number
+    luaunit.assertErrorMsgContains("Error: Dollar amounts should be positive.", cc.convertUSDollarToJapaneseYen, -9001)
+    -- Testing the case of passing a non-number
+    luaunit.assertErrorMsgContains("Error: Entry was not a valid dollar amount.", cc.convertUSDollarToJapaneseYen, ".. IT'S OVER 9000!!")
+end
 os.exit(luaunit.LuaUnit.run())
