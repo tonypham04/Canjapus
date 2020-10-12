@@ -9,6 +9,7 @@ local function displayMainMenu()
     print("c. Convert Canadian Dollar to US Dollar")
     print("d. Convert US Dollar to Canadian Dollar")
     print("e. Convert US Dollar to Japanese Yen")
+    print("f. Convert Japanese Yen to US Dollar")
     print("q. Quit")
     io.write("> ")
 end
@@ -72,10 +73,15 @@ local function run()
             if type(amount) == "number" then
                 io.write(string.format("$%.2f American is equal to %s yen.\n", amount, cc.convertUSDollarToJapaneseYen(amount)))
             end
+        elseif choice == "f" or choice == "F" then
+            amount = getAndValidateAmount("Japanese Yen", "American Dollar")
+            if type(amount) == "number" then
+                io.write(string.format("%.2f yen is equal to $%s American.\n", amount, cc.convertJapaneseYenToUSDollar(amount)))
+            end
         elseif choice == "q" or choice == "Q" then
             print("Exiting the program..")
         else
-            print("Invalid option. Please choose between options a, b, c, d, e and q.\n")
+            print("Invalid option. Please choose between options a, b, c, d, e, f and q.\n")
         end
         io.write("Returning to the main menu..\n")
     until choice == "q" or choice == "Q"

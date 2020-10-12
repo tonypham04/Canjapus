@@ -36,4 +36,8 @@ function currencyConversion.convertUSDollarToJapaneseYen(dollar)
     return currencyConversion.convertAmount(dollar, US_DOLLAR_TO_JAPANESE_YEN)
 end
 
+function currencyConversion.convertJapaneseYenToUSDollar(yen)
+    return currencyConversion.convertAmount(yen, 1/US_DOLLAR_TO_JAPANESE_YEN)
+end
+
 return currencyConversion
