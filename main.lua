@@ -83,7 +83,9 @@ local function run()
         else
             print("Invalid option. Please choose between options a, b, c, d, e, f and q.\n")
         end
-        io.write("Returning to the main menu..\n")
+        if choice ~= "q" and choice ~= "Q" then
+            io.write("Returning to the main menu..\n")
+        end
     until choice == "q" or choice == "Q"
 end
 
