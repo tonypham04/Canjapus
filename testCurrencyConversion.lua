@@ -64,4 +64,17 @@ function testConvertUSDollarToJapaneseYen()
     -- Testing the case of passing a non-number
     luaunit.assertErrorMsgContains("Error: Entry was not a valid dollar amount.", cc.convertUSDollarToJapaneseYen, ".. IT'S OVER 9000!!")
 end
+
+function testConvertJapaneseYenToUSDollar()
+    -- Testing the base conversion factor
+    luaunit.assertEquals(cc.convertJapaneseYenToUSDollar(1), "0.01")
+    -- Testing the proper conversion using a valid value
+    luaunit.assertEquals(cc.convertJapaneseYenToUSDollar(253.47), "2.41")
+    -- Testing the case of zero
+    luaunit.assertEquals(cc.convertJapaneseYenToUSDollar(0), "0.00")
+    -- Testing the case of a negative number (Fun fact: Absolute zero corresponds to -273.15 degrees celcius or 0 K)
+    luaunit.assertErrorMsgContains("Error: Dollar amounts should be positive.", cc.convertJapaneseYenToUSDollar, -273.15)
+    -- Testing the case of passing a non-number
+    luaunit.assertErrorMsgContains("Error: Entry was not a valid dollar amount.", cc.convertJapaneseYenToUSDollar, "The quick brown fox jumps over the lazy dog.")
+end
 os.exit(luaunit.LuaUnit.run())
