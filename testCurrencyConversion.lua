@@ -21,7 +21,7 @@ function testConvertJapaneseYenToCanadianDollar()
     -- Testing the case of zero
     luaunit.assertEquals(cc.convertJapaneseYenToCanadianDollar(0), "0.00")
     -- Testing the case of a negative nunmber
-    luaunit.assertErrorMsgContains("Error: Dollar amounts should be positive", cc.convertJapaneseYenToCanadianDollar, -5.94)
+    luaunit.assertErrorMsgContains("Error: Dollar amounts should be positive.", cc.convertJapaneseYenToCanadianDollar, -5.94)
     -- Testing the case of passing a non-number
     luaunit.assertErrorMsgContains("Error: Entry was not a valid dollar amount.", cc.convertJapaneseYenToCanadianDollar, "Lua is an awesome programming language!")
 end
@@ -34,8 +34,21 @@ function testConvertCanadianDollarToUSDollar()
     -- Testing the case of zero
     luaunit.assertEquals(cc.convertCanadianDollarToUSDollar(0), "0.00")
     -- Testing the case of a negative number
-    luaunit.assertErrorMsgContains("Error: Dollar amounts should be positive", cc.convertCanadianDollarToUSDollar, -0.42)
+    luaunit.assertErrorMsgContains("Error: Dollar amounts should be positive.", cc.convertCanadianDollarToUSDollar, -0.42)
     -- Testing the case of passing a non-number
     luaunit.assertErrorMsgContains("Error: Entry was not a valid dollar amount.", cc.convertCanadianDollarToUSDollar, "The name 'Canjapus' reminds me of a platypus..")
+end
+
+function testConvertUSDollarToCanadianDollar()
+    -- Testing the base conversion factor
+    luaunit.assertEquals(cc.convertUSDollarToCanadianDollar(1.00), "1.32")
+    -- Testing proper conversion using a valid value
+    luaunit.assertEquals(cc.convertUSDollarToCanadianDollar(1699.72), "2236.47")
+    -- Testing the case of zero
+    luaunit.assertEquals(cc.convertUSDollarToCanadianDollar(0.00), "0.00")
+    -- Testing the case of a negative number
+    luaunit.assertErrorMsgContains("Error: Dollar amounts should be positive.", cc.convertUSDollarToCanadianDollar, -29.14)
+    -- Testing the case of passing a non-number
+    luaunit.assertErrorMsgContains("Error: Entry was not a valid dollar amount.", cc.convertUSDollarToCanadianDollar, "Visual Studio Code is an awesome text editor!")
 end
 os.exit(luaunit.LuaUnit.run())
