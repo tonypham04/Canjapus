@@ -49,28 +49,23 @@ local function run()
             amount = getAndValidateAmount("Canadian Dollar", "Japanese Yen")
             if type(amount) == "number" then
                 io.write(string.format("$%.2f is equal to %s yen.\n", amount, cc.convertCanadianDollarToJapaneseYen(amount)))
-            else
-                io.write("Returning to the main menu..\n")
             end
         elseif choice == "b" or choice == "B" then
             amount = getAndValidateAmount("Japanese Yen", "Canadian Dollar")
             if type(amount) == "number" then
                 io.write(string.format("%.2f yen is equal to $%s Canadian.\n", amount, cc.convertJapaneseYenToCanadianDollar(amount)))
-            else
-                io.write("Returning to the main menu..\n")
             end
         elseif choice == "c" or choice == "C" then
             amount = getAndValidateAmount("Canadian Dollar", "American Dollar")
             if type(amount) == "number" then
                 io.write(string.format("$%.2f Canadian is equal to $%.2f US.\n", amount, cc.convertCanadianDollarToUSDollar(amount)))
-            else
-                io.write("Returning to the main menu..\n")
             end
         elseif choice == "q" or choice == "Q" then
             print("Exiting the program..")
         else
             print("Invalid option. Please choose between options a, b and q.\n")
         end
+        io.write("Returning to the main menu..\n")
     until choice == "q" or choice == "Q"
 end
 
